@@ -1,14 +1,31 @@
+import React from "react";
 import Link from "next/link";
-
-const handleNavbar = () => {
-  console.log("Hello");
-};
+import { useState } from "react";
+import Image from "next/image";
 
 export default function header() {
+  const [className, setClassName] = useState("md:px-20 md:py-10");
+
+  const handleSidebar = () => {
+    console.log("Hello");
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        setClassName("md:px-12 md:py-5 shadow-lg bg-white");
+      } else {
+        setClassName("md:px-20 md:py-10");
+      }
+    });
+  });
+
   return (
-    <header className="flex justify-between items-center w-screen h-16 px-6 md:px-12 md:py-10 shadow-xl">
+    <header
+      className={`flex justify-between items-center px-4 py-4 w-screen z-10 fixed duration-500 ${className}`}
+    >
       <div className="flex items-center">
-        <img src="/logo.png" alt="Kabira's Logo" className="w-7 md:w-8" />
+        <Image src="/logo.png" alt="Kabira's Logo" width={31} height={31} />
         <span className="hidden md:inline-block md:ml-2 text-lg md:text-3xl">
           |
         </span>
@@ -20,7 +37,7 @@ export default function header() {
         src="/menu.svg"
         alt="menu navbar"
         className="md:hidden inline-block cursor-pointer w-9"
-        onClick={handleNavbar}
+        onClick={handleSidebar}
       />
       <ul className="hidden md:flex">
         <li className="mr-7">
@@ -34,7 +51,7 @@ export default function header() {
           </Link>
         </li>
         <li className="mr-7">
-          <Link href="/">
+          <Link href="/hello">
             <a className="font-semibold">Jobs</a>
           </Link>
         </li>

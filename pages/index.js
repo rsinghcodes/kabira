@@ -13,7 +13,6 @@ export default function Home() {
       <div className="w-screen md:px-12">
         <Service />
         <Title className="block text-center" value="Our Furniture Works" />
-        <p>Hello</p>
       </div>
     </>
   );

@@ -1,3 +1,4 @@
-export default function subTitle() {
-  return <div></div>;
+export default function subTitle(props) {
+  const { value, className } = props;
+  return <p className={`text-lg font-semibold ${className}`}>{value}</p>;
 }
