@@ -4,6 +4,7 @@ import Service from "../components/service";
 import Title from "../components/title";
 import SubTitle from "../components/subTitle";
 import ImgBox from "../components/ImgBox";
+import Image from "../components/Reusables/Image";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
         ></link>
       </Head>
-      <Bigbanner source="1.jpg" alt="Big banner" />
+      <Bigbanner />
       <div className="w-screen md:px-12">
         <Service />
         <Title className="block text-center mt-7" value="Our Furniture Works" />
@@ -24,14 +25,24 @@ export default function Home() {
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />
-        <ImgBox />
+        <ImgBox>
+          <Image src="/1.jpg" alt="test" />
+          <Image src="/2.jpg" alt="test" />
+          <Image src="/3.jpg" alt="test" />
+          <Image src="/4.jpg" alt="test" />
+        </ImgBox>
         <Title className="block text-center mt-14" value="Interior Works" />
         <SubTitle
           className="block text-center mt-2"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />
-        <ImgBox className="mb-6" />
+        <ImgBox>
+          <Image src="/5.jpg" alt="test" />
+          <Image src="/6.jpg" alt="test" />
+          <Image src="/7.jpg" alt="test" />
+          <Image src="/8.jpg" alt="test" />
+        </ImgBox>
         <hr className="my-6" />
       </div>
     </>

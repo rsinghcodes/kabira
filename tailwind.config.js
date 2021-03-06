@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: () => ({
-        banner: "url('/1.jpg')",
+        banner: "url('/5.jpg')",
       }),
     },
   },

@@ -1,12 +1,17 @@
 import React from "react";
+import ServiceIcon from "./Reusables/ServiceIcon";
 
 export default function service() {
   return (
     <div
-      className="h-20 flex justify-center items-center bg-white shadow-xl rounded-md"
+      className="h-24 flex justify-around items-center bg-white shadow-xl rounded-md"
       style={{ transform: "translateY(-1.8rem)" }}
     >
-      This is service box
+      <ServiceIcon src="/Armchair.png" alt="Sofa Making" />
+      <ServiceIcon src="/Bed.png" alt="Bed Making" />
+      <ServiceIcon src="/Design.png" alt="Interior Design" />
+      <ServiceIcon src="/Closet.png" alt="Almirah Making" />
+      <ServiceIcon src="/OpenWindow.png" alt="Window Design" />
     </div>
   );
 }

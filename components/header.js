@@ -6,19 +6,24 @@ import Image from "next/image";
 const navItems = [
   { id: 1, src: "/", label: "Home" },
   { id: 2, src: "/services", label: "Our Services" },
-  { id: 3, src: "/jobs", label: "Jobs" },
   { id: 4, src: "/about", label: "About" },
 ];
 
 export default function header() {
   const [className, setClassName] = useState("md:px-20 md:py-10");
   const [toggleNavbar, setToggleNavbar] = useState("-left-full md:left-0");
+  const [iconCross, setIconCross] = useState("hidden");
+  const [iconMenu, setIconMenu] = useState("inline-block");
 
   const handleSidebar = () => {
     if (toggleNavbar == "left-0") {
       setToggleNavbar("-left-full md:left-0");
+      setIconCross("hidden");
+      setIconMenu("inline-block");
     } else {
       setToggleNavbar("left-0");
+      setIconCross("inline-block");
+      setIconMenu("hidden");
     }
   };
 
@@ -51,11 +56,17 @@ export default function header() {
       <img
         src="/menu.svg"
         alt="menu navbar"
-        className="md:hidden inline-block cursor-pointer w-7"
+        className={`md:hidden ${iconMenu} cursor-pointer w-7`}
+        onClick={handleSidebar}
+      />
+      <img
+        src="/cross.svg"
+        alt="menu navbar"
+        className={`md:hidden ${iconCross} cursor-pointer w-5`}
         onClick={handleSidebar}
       />
       <ul
-        className={`h-screen md:h-0 flex flex-col md:flex-row items-start md:items-center justify-start md:bg-transparent bg-white fixed md:relative top-0 ${toggleNavbar} duration-500 p-8 md:p-0 shadow-lg`}
+        className={`h-screen w-3/5 md:h-0 flex flex-col md:flex-row items-center md:items-center justify-start md:bg-transparent bg-white fixed md:relative top-0 ${toggleNavbar} duration-500 p-8 md:p-0 shadow-lg`}
       >
         {navItems.map((item) => (
           <li
