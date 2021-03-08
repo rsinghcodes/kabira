@@ -17,11 +17,11 @@ export default function Home() {
         ></link>
       </Head>
       <Bigbanner />
-      <div className="w-screen md:px-12">
+      <div className="w-screen flex flex-col justify-center items-center md:px-12">
         <Service />
-        <Title className="block text-center mt-7" value="Our Furniture Works" />
+        <Title className="block text-center mt-6" value="Our Furniture Works" />
         <SubTitle
-          className="block text-center mt-2"
+          className="block text-center mt-1"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />
@@ -33,7 +33,7 @@ export default function Home() {
         </ImgBox>
         <Title className="block text-center mt-14" value="Interior Works" />
         <SubTitle
-          className="block text-center mt-2"
+          className="block text-center mt-1"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />

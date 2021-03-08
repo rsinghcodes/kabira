@@ -43,45 +43,66 @@ export default function header() {
     >
       <Link href="/">
         <a className="flex items-center">
-          <Image src="/logo.png" alt="Kabira's Logo" width={31} height={31} />
-          <span className="hidden md:inline-block md:ml-2 text-lg md:text-3xl">
-            |
-          </span>
+          <img
+            src="/logo.png"
+            alt="Kabira's Logo"
+            className="w-7 md:hidden inline-block"
+          />
           <h1 className="hidden md:inline-block md:text-3xl font-semibold md:ml-2">
             Kabira
           </h1>
         </a>
       </Link>
+      <svg
+        className={`h-8 w-8 md:hidden ${iconMenu} cursor-pointer`}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+        onClick={handleSidebar}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
 
-      <img
-        src="/menu.svg"
-        alt="menu navbar"
-        className={`md:hidden ${iconMenu} cursor-pointer w-7`}
+      <svg
+        className={`h-8 w-8 cursor-pointer md:hidden ${iconCross}`}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
         onClick={handleSidebar}
-      />
-      <img
-        src="/cross.svg"
-        alt="menu navbar"
-        className={`md:hidden ${iconCross} cursor-pointer w-5`}
-        onClick={handleSidebar}
-      />
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
       <ul
-        className={`h-screen w-3/5 md:h-0 flex flex-col md:flex-row items-center md:items-center justify-start md:bg-transparent bg-white fixed md:relative top-0 ${toggleNavbar} duration-500 p-8 md:p-0 shadow-lg`}
+        className={`min-h-screen md:min-h-0 w-48 md:w-auto flex flex-col md:flex-row item-start md:items-center justify-start md:bg-transparent bg-white fixed md:relative top-0 ${toggleNavbar} duration-500 p-8 md:p-0 md:shadow-none shadow-lg`}
       >
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="mb-8 md:mr-7 md:mb-0 border-b-2 md:border-b-0"
+            className="mb-8 md:mr-7 md:mb-0"
             onClick={handleSidebar}
           >
             <Link href={item.src}>
-              <a className="font-semibold">{item.label}</a>
+              <a className="md:font-normal font-medium">{item.label}</a>
             </Link>
           </li>
         ))}
-        <li className="border-b-2 md:border-b-0" onClick={handleSidebar}>
+        <li onClick={handleSidebar}>
           <Link href="/contact">
-            <a className="font-semibold">Contact</a>
+            <a className="md:font-normal font-medium">Contact</a>
           </Link>
         </li>
       </ul>

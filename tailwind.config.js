@@ -5,10 +5,8 @@ module.exports = {
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },
-    extend: {
-      backgroundImage: () => ({
-        banner: "url('/5.jpg')",
-      }),
+    textColor: {
+      customblue: "#011f32",
     },
   },
   variants: {
