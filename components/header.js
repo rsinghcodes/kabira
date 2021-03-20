@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
 
 const navItems = [
   { id: 1, src: "/", label: "Home" },

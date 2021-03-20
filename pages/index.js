@@ -18,22 +18,25 @@ export default function Home() {
       </Head>
       <Bigbanner />
       <div className="w-screen flex flex-col justify-center items-center md:px-12">
-        <Service />
-        <Title className="block text-center mt-6" value="Our Furniture Works" />
+        {/* <Service /> */}
+        <Title
+          className="block text-center mt-14"
+          value="Our Furniture Works"
+        />
         <SubTitle
-          className="block text-center mt-1"
+          className="block text-center mt-2"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />
-        <ImgBox>
+        <ImgBox className="pt-4">
           <Image src="/1.jpg" alt="test" />
           <Image src="/2.jpg" alt="test" />
           <Image src="/3.jpg" alt="test" />
           <Image src="/4.jpg" alt="test" />
         </ImgBox>
-        <Title className="block text-center mt-14" value="Interior Works" />
+        <Title className="block text-center mt-12" value="Interior Works" />
         <SubTitle
-          className="block text-center mt-1"
+          className="block text-center mt-2"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
         <hr className="my-6" />

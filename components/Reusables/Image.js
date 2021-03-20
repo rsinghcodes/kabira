@@ -2,5 +2,17 @@ import React from "react";
 
 export default function Image(props) {
   const { src, alt } = props;
-  return <img className="w-full rounded lg:h-44 h-full" alt={alt} src={src} />;
+  return (
+    <>
+      <style jsx>{`
+        .img {
+          width: 100%;
+          height: 200px;
+          margin: 0 0.5rem;
+          border-radius: 5px;
+        }
+      `}</style>
+      <img className="img" alt={alt} src={src} />
+    </>
+  );
 }
