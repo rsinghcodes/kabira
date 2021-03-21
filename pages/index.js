@@ -1,52 +1,56 @@
 import Head from "next/head";
 import Bigbanner from "../components/bigbanner";
-import Service from "../components/service";
+import WorkBox from "../components/workBox";
 import Title from "../components/title";
 import SubTitle from "../components/subTitle";
-import ImgBox from "../components/ImgBox";
-import Image from "../components/Reusables/Image";
+import RecentWorks from "../components/recentWorks";
+import Testimonial from "../components/testimonial";
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Kabira | Home</title>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-        ></link>
       </Head>
       <Bigbanner />
       <div className="w-screen flex flex-col justify-center items-center md:px-12">
-        {/* <Service /> */}
-        <Title
-          className="block text-center mt-14"
-          value="Our Furniture Works"
+        <WorkBox
+          title="Our Furniture Works"
+          subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          imgOneSrc="/1.jpg"
+          imgOneAlt="test"
+          imgTwoSrc="/2.jpg"
+          imgTwoAlt="test"
+          imgThreeSrc="/3.jpg"
+          imgThreeAlt="test"
+          imgFourSrc="/4.jpg"
+          imgFourAlt="test"
         />
+        <WorkBox
+          title="Interior Works"
+          subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          imgOneSrc="/5.jpg"
+          imgOneAlt="test"
+          imgTwoSrc="/6.jpg"
+          imgTwoAlt="test"
+          imgThreeSrc="/7.jpg"
+          imgThreeAlt="test"
+          imgFourSrc="/8.jpg"
+          imgFourAlt="test"
+        />
+        <Title className="block text-center mt-14" value="Recent Works" />
         <SubTitle
           className="block text-center mt-2"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
-        <hr className="my-6" />
-        <ImgBox className="pt-4">
-          <Image src="/1.jpg" alt="test" />
-          <Image src="/2.jpg" alt="test" />
-          <Image src="/3.jpg" alt="test" />
-          <Image src="/4.jpg" alt="test" />
-        </ImgBox>
-        <Title className="block text-center mt-12" value="Interior Works" />
+        <hr className="my-6 z-50" />
+        <RecentWorks />
+        <Title className="block text-center mt-14" value="Testimonials" />
         <SubTitle
           className="block text-center mt-2"
           value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         />
-        <hr className="my-6" />
-        <ImgBox>
-          <Image src="/5.jpg" alt="test" />
-          <Image src="/6.jpg" alt="test" />
-          <Image src="/7.jpg" alt="test" />
-          <Image src="/8.jpg" alt="test" />
-        </ImgBox>
-        <hr className="my-6" />
+        <Testimonial />
       </div>
     </>
   );

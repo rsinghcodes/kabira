@@ -6,7 +6,7 @@ export default function Image(props) {
     <>
       <style jsx>{`
         .img {
-          width: 100%;
+          width: 300px;
           height: 200px;
           margin: 0 0.5rem;
           border-radius: 5px;
